@@ -30,7 +30,7 @@ public class Main {
         if (c == '+') {
             writeInQuotes(m[0] + m[1]);
         } else if (c == '*') {
-            int x = Integer.parseInt(m[1]);
+            int x = Integer.parseInt(m[1]); // так нельзя длинна строки это .length()
             writeInQuotes(String.valueOf(m[0]).repeat(Math.max(0, x)));
         } else if (c == '-') {
             int y = m[0].indexOf(m[0]);
