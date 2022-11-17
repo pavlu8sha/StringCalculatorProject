@@ -6,23 +6,23 @@ public class Main {
         String str = sc.nextLine();
         char c;
         String[] m;
-        if (str.contains(" + ")) {
-            m = str.split("\\+");
+        if (str.contains("+")) {
+            m = str.split(" \\+ ");
             c = '+';
-        } else if (str.contains(" - ")) {
-            m = str.split("-");
+        } else if (str.contains("-")) {
+            m = str.split(" - ");
             c = '-';
-        } else if (str.contains(" * ")) {
-            m = str.split("\\*");
+        } else if (str.contains("*")) {
+            m = str.split(" \\* ");
             c = '*';
-        } else if (str.contains(" / ")) {
+        } else if (str.contains("/")) {
             m = str.split(" / ");
             c = '/';
         } else {
             throw new Exception("Некорректный знак действия");
         }
         if (c == '*' || c == '/') {
-            if (m[1].contains("\"")) throw new Exception("Строчку  можно делить или умножать только на число");
+            if (m[1].contains("\"")) throw new Exception("Строчку можно делить или умножать только на число");
         }
         for (int i = 0; i < m.length; i++) {
             m[i] = m[i].replace("\"", "");
@@ -47,7 +47,8 @@ public class Main {
             writeInQuotes(res);
         }
     }
-     private static void writeInQuotes(String s) {
+
+    private static void writeInQuotes(String s) {
         System.out.println("\"" + s + "\"");
     }
 }
