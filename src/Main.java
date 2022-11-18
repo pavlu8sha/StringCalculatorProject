@@ -33,14 +33,8 @@ public class Main {
             int x = Integer.parseInt(m[1]);
             writeInQuotes(String.valueOf(m[0]).repeat(Math.max(0, x)));
         } else if (c == '-') {
-            int y = m[0].indexOf(m[0]);
-            if (y == -1) {
-                writeInQuotes(m[0]);
-            } else {
-                String res = m[0].substring(0, y);
-                res += m[0].substring(y + m[1].length());
-                writeInQuotes(res);
-            }
+            String y = m[0].replace(m[1], "");
+            writeInQuotes(y);
         } else {
             int z = m[0].length() / Integer.parseInt(m[1]);
             String res = m[0].substring(0, z);
